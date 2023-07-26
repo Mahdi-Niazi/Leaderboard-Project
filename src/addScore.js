@@ -1,14 +1,14 @@
-import { form, apiURL } from "./variable.js";
+import { form, apiURL } from './variable.js';
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const user = document.getElementById("name").value;
-  const score = document.getElementById("score").value;
+  const user = document.getElementById('name').value;
+  const score = document.getElementById('score').value;
   const addData = async () => {
     const add = await fetch(apiURL, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         user,
@@ -23,19 +23,19 @@ form.addEventListener("submit", (e) => {
             Score Added successfully! Please click on Refresh 
             </div>`;
       document
-        .querySelector(".score-box")
-        .insertAdjacentHTML("afterbegin", successAlert);
+        .querySelector('.score-box')
+        .insertAdjacentHTML('afterbegin', successAlert);
       form.reset();
       setTimeout(() => {
-        document.querySelector(".alert-success").style.display = "none";
+        document.querySelector('.alert-success').style.display = 'none';
       }, 5000);
     } else {
       const warningAlert = `<div class="alert alert-warning" role="alert">
                 Something went wrong!
                 </div>`;
       document
-        .querySelector(".score-box")
-        .insertAdjacentHTML("afterbegin", warningAlert);
+        .querySelector('.score-box')
+        .insertAdjacentHTML('afterbegin', warningAlert);
     }
   });
 });
