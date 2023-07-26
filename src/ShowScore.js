@@ -1,9 +1,9 @@
-import { showData, table, apiURL} from "./variable.js";
+import { showData, table, apiURL } from './variable.js';
 
-showData.addEventListener("click", (e) => {
+showData.addEventListener('click', (e) => {
   e.preventDefault();
 
-  table.innerHTML = "";
+  table.innerHTML = '';
   async function showScore() {
     const show = await fetch(apiURL);
     return show.json();

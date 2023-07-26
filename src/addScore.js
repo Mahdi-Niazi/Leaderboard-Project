@@ -1,4 +1,6 @@
-import {form, user, score} from './variable.js';
+import {
+  form, user, score, apiURL,
+} from './variable.js';
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
