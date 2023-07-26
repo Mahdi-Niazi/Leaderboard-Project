@@ -23,32 +23,18 @@
                             <h2>Recent Scores</h2>
                         </div>
                         <div class="col-md-4">
-                            <a href="" class="btn btn-primary">Refresh</a>
+                            <a href="" class="btn btn-primary refresh-btn">Refresh</a>
                         </div>
                     </div>
                     <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <td>Name : 100</td>
-                            </tr>
-                             <tr>
-                                <td>Name : 100</td>
-                            </tr>
-                             <tr>
-                                <td>Name : 100</td>
-                            </tr>
-                             <tr>
-                                <td>Name : 100</td>
-                            </tr>
-                             <tr>
-                                <td>Name : 100</td>
-                            </tr>
+                        <tbody class="tbody">
+                            
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 score-box">
                     <h2>Add your score</h2>
-                    <form action="#" method="post">
+                    <form action="#" method="post" id="score-form">
                         <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
                         <input type="number" class="form-control mt-3" name="score" id="score" placeholder="Your score">
                         <button type="submit" class="btn btn-primary mt-3 d-flex justify-content-right">Submit</button>
