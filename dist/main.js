@@ -122,9 +122,10 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /*!**************************!*\
   !*** ./src/ShowScore.js ***!
   \**************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("async function showScore() {\n  const show = await fetch(\n    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/OF05SZzD4WoEnigb5GUR/scores',\n  );\n  return show.json();\n}\nshowScore().then((data) => {\n  data.result.forEach((user) => {\n    const markup = `<tr> <td> ${user.user} : ${user.score}</td></tr> `;\n    document.querySelector('.tbody').insertAdjacentHTML('beforeend', markup);\n  });\n});\n\n\n//# sourceURL=webpack://webpack-practice/./src/ShowScore.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _variable_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./variable.js */ \"./src/variable.js\");\n/* harmony import */ var _variable_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_variable_js__WEBPACK_IMPORTED_MODULE_0__);\n\n\nshowData.addEventListener('click', (e) => {\n  e.preventDefault();\n\n  table.innerHTML = '';\n  async function showScore() {\n    const show = await fetch(apiURL);\n    return show.json();\n  }\n  showScore().then((data) => {\n    data.result.forEach((user) => {\n      const markup = `<tr> <td> ${user.user} : ${user.score}</td></tr> `;\n      table.innerHTML += markup;\n    });\n  });\n});\n\n\n//# sourceURL=webpack://webpack-practice/./src/ShowScore.js?");
 
 /***/ }),
 
@@ -142,9 +143,10 @@ eval("fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/game
 /*!*************************!*\
   !*** ./src/addScore.js ***!
   \*************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("const form = document.getElementById('score-form');\n\nform.addEventListener('submit', (e) => {\n  e.preventDefault();\n\n  const user = document.getElementById('name').value;\n  const score = document.getElementById('score').value;\n\n  async function addData() {\n    const add = await fetch(\n      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/OF05SZzD4WoEnigb5GUR/scores',\n      {\n        method: 'POST',\n        headers: {\n          'Content-Type': 'application/json',\n        },\n        body: JSON.stringify({\n          user,\n          score,\n        }),\n      },\n    );\n    return add.json();\n  }\n  addData().then((cheeseData) => {\n    if (cheeseData) {\n      const successAlert = `<div class=\"alert alert-success\" role=\"alert\">\n            Score Added successfully! Please click on Refresh \n            </div>`;\n      document\n        .querySelector('.score-box')\n        .insertAdjacentHTML('afterbegin', successAlert);\n    } else {\n      const warningAlert = `<div class=\"alert alert-warning\" role=\"alert\">\n                Something went wrong!\n                </div>`;\n      document\n        .querySelector('.score-box')\n        .insertAdjacentHTML('afterbegin', warningAlert);\n    }\n  });\n});\n\n\n//# sourceURL=webpack://webpack-practice/./src/addScore.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _variable_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./variable.js */ \"./src/variable.js\");\n/* harmony import */ var _variable_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_variable_js__WEBPACK_IMPORTED_MODULE_0__);\n\n\nform.addEventListener('submit', (e) => {\n  e.preventDefault();\n  async function addData() {\n    const add = await fetch(apiURL, {\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        user,\n        score,\n      }),\n    });\n    return add.json();\n  }\n  addData().then((cheeseData) => {\n    if (cheeseData) {\n      const successAlert = `<div class=\"alert alert-success\" role=\"alert\">\n            Score Added successfully! Please click on Refresh \n            </div>`;\n      document\n        .querySelector('.score-box')\n        .insertAdjacentHTML('afterbegin', successAlert);\n    } else {\n      const warningAlert = `<div class=\"alert alert-warning\" role=\"alert\">\n                Something went wrong!\n                </div>`;\n      document\n        .querySelector('.score-box')\n        .insertAdjacentHTML('afterbegin', warningAlert);\n    }\n  });\n});\n\n\n//# sourceURL=webpack://webpack-practice/./src/addScore.js?");
 
 /***/ }),
 
@@ -155,7 +157,17 @@ eval("const form = document.getElementById('score-form');\n\nform.addEventListen
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _addGame_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addGame.js */ \"./src/addGame.js\");\n/* harmony import */ var _addGame_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_addGame_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _addScore_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addScore.js */ \"./src/addScore.js\");\n/* harmony import */ var _addScore_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_addScore_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _ShowScore_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ShowScore.js */ \"./src/ShowScore.js\");\n/* harmony import */ var _ShowScore_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_ShowScore_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nconst refresh = document.querySelector('.refresh-btn');\n\nrefresh.addEventListener('click', () => {\n  window.location.reload();\n});\n\n\n//# sourceURL=webpack://webpack-practice/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _variable_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./variable.js */ \"./src/variable.js\");\n/* harmony import */ var _variable_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_variable_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _addGame_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addGame.js */ \"./src/addGame.js\");\n/* harmony import */ var _addGame_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_addGame_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _addScore_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addScore.js */ \"./src/addScore.js\");\n/* harmony import */ var _ShowScore_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ShowScore.js */ \"./src/ShowScore.js\");\n\n\n\n\n\n\n\n//# sourceURL=webpack://webpack-practice/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/variable.js":
+/*!*************************!*\
+  !*** ./src/variable.js ***!
+  \*************************/
+/***/ (() => {
+
+eval("const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/OF05SZzD4WoEnigb5GUR/scores';\n\nconst showData = document.querySelector('#showData');\nconst table = document.querySelector('.tbody');\n\nconst form = document.getElementById('score-form');\n\nconst user = document.getElementById('name').value;\nconst score = document.getElementById('score').value;\n\n\n//# sourceURL=webpack://webpack-practice/./src/variable.js?");
 
 /***/ })
 
