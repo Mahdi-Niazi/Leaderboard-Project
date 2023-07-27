@@ -2,3 +2,26 @@
   padding: 0;
   margin: 0;
 }
+
+.leaderborad {
+  border: 1px solid black;
+  padding: 24px;
+}
+
+.btn-holder {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.general-btn {
+  border: 1px solid black;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  background-color: #f2f2f2;
+}
+
+.general-btn:hover {
+  background-color: black;
+  color: #f2f2f2;
+}
