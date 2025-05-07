@@ -107,7 +107,7 @@ Test for Linters For tracking linter errors locally you need to follow these ste
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [leaderboard](https://mahdi-niazi.github.io/leaderboard-project/dist/index.html)
+- [leaderboard](https://leaderboard-project-pzwz.onrender.com)
 
 
 
